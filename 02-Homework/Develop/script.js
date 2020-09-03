@@ -3,21 +3,32 @@
 $(document).ready(function () {
 
     // add current day and date with moments to #currentDay
-    // function readFromLocalStorage ()
-    // <!-- this is to look for anything saved previously in local storage -->
-    //     use for loop
-    //         - read value from time property
-    //         - assign as text back in element (using its class (.description) and id (specific to each hour)
-    //         - check current hour vs time slot (to determine color of text area: gray, red or white)
-    //             - assign proper class (.past .present .future) based on comparison to current hour (,, === or =,=, ===)
-    // function writeToLocalStorage ()
-    // <!-- this is to save a value from the text area to local storage, using the hour as the key when save button is clicked -->
-    //     add click event to save button class to run function
-    //         - read text from text area (class = "description", should be parent of save button)
-    //         - read schedule hour
-    //         - trim text, trim schedule hour
-    //         - send to local storage
-    // call readFromLocalStorage();
+    const currentDate = moment().format("MMM Do YYYY");
+    $("#currentDay").append(currentDate);
+
+    // When we click on the save button
+    $(".saveBtn").on("click", function () {
+        //get the value of the textarea sibling
+        var text = $(this).siblings(".description").val();
+        //keep track of the scheduleHour by noting the id of the parent (which was set in html)
+
+        // Trim text, trim schedule hour
+
+        //save both of these values to local storage
+
+        //call readFromLocalStorage
+    })
+
+    //we must keep track of the time as it progresses with a timeTracker function
+        //that obtains the current hour
+
+        //in a for loop for each timeblock
+            //checks to see if we've moved past this time
+            //changing class to past present or future accordingly, based on comparison to current hour (,, === or =,=, ===)
+
+    //Set time to update every 20 seconds
+
+    //load any stored data from local storage to the page 
 
 
 
