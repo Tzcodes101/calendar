@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-    // add current day and date with moments to #currentDay
+    // add current day and date with moment js to #currentDay
     const currentDate = moment().format("MMM Do YYYY");
     $("#currentDay").append(currentDate);
 
@@ -19,8 +19,8 @@ $(document).ready(function () {
 
         //save both of these values to local storage
         localStorage.setItem(text, scheduleHour);
-        //call readFromLocalStorage
-    })
+        
+    });
     
     //we must keep track of the time as it progresses with a timeTracker function
     function timeTracker() {
@@ -31,16 +31,16 @@ $(document).ready(function () {
         //in a for each loop for each timeblock
         $(".time-block").each(function () {
             //checks to see if we've moved past this time, using the id of the time block (must change it to a number)
-            let blockHour = parseInt($(this).attr("id"));
-            console.log(blockHour);
+            let trackHour = parseInt($(this).attr("id"));
+            console.log(trackHour);
 
             //if we have moved past the current hour
-            if (blockHour < currentHour) {
+            if (trackHour < currentHour) {
                 //change class to past
                 $(this).addClass("past");
 
             } // or if we are on the current hour, change it to present
-            else if (blockHour === currentHour) {
+            else if (trackHour === currentHour) {
                 $(this).removeClass("past");
                 $(this).addClass("present");
             } // or if it is still in the future, change class to future
@@ -54,6 +54,8 @@ $(document).ready(function () {
 
     //Set time to update every 20 seconds
     var interval = setInterval(timeTracker, 20000);
+
+    console.log($("#9 .description"));
 
     //load any stored data from local storage to the page 
     $("#9 .description").localStorage.getItem("9");
