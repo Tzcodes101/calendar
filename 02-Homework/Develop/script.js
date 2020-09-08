@@ -18,7 +18,7 @@ $(document).ready(function () {
         scheduleHour.trim();
 
         //save both of these values to local storage
-        localStorage.setItem(text, scheduleHour);
+        localStorage.setItem(scheduleHour, text);
         
     });
     
@@ -55,18 +55,16 @@ $(document).ready(function () {
     //Set time to update every 20 seconds
     var interval = setInterval(timeTracker, 20000);
 
-    console.log($("#9 .description"));
-
     //load any stored data from local storage to the page 
-    $("#9 .description").localStorage.getItem("9");
-    $("#10 .description").localStorage.getItem("10");
-    $("#11 .description").localStorage.getItem("11");
-    $("#12 .description").localStorage.getItem("12");
-    $("#13 .description").localStorage.getItem("13");
-    $("#14 .description").localStorage.getItem("14");
-    $("#15 .description").localStorage.getItem("15");
-    $("#16 .description").localStorage.getItem("16");
-    $("#17 .description").localStorage.getItem("17");
+    $("#9 .description").val(localStorage.getItem("9"));
+    $("#10 .description").val(localStorage.getItem("10"));
+    $("#11 .description").val(localStorage.getItem("11"));
+    $("#12 .description").val(localStorage.getItem("12"));
+    $("#13 .description").val(localStorage.getItem("13"));
+    $("#14 .description").val(localStorage.getItem("14"));
+    $("#15 .description").val(localStorage.getItem("15"));
+    $("#16 .description").val(localStorage.getItem("16"));
+    $("#17 .description").val(localStorage.getItem("17"));
 
 });
 
