@@ -1,4 +1,4 @@
-THEN the saved events persist
+
 
 This application is a simple calendar that runs in the browser. It features a dynamically updated HTML and CSS powered by jQuery. A user can input and save tasks for each hour of the day, and return to the application to review those tasks.
 
